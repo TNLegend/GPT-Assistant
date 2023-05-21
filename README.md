@@ -6,17 +6,11 @@
 
 2- Install Pytorch [here](https://pytorch.org/get-started/locally/) (choose cuda if you have a good GPU else choose CPU)
 
-3- Install chocolatey [here](https://chocolatey.org/install)
+3- Install chocolatey [here](https://chocolatey.org/install) (for windows)
 
-4- Install ffmpeg "choco install ffmpeg" in powershell as admin.
+4- Install ffmpeg "choco install ffmpeg" in powershell as admin (for windows)
 
-5- Install whisper "pip install openai-whisper"
-
-6- Install openAI "pip install openai
-
-7- Install pyaudio "pip install pyaudio"
-
-8- Install speech recognition module "pip install SpeechRecognition"
+5- Install python requirements "pip install -r requirements.txt"
 
 ## Usage:
 
