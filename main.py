@@ -75,6 +75,7 @@ def listen_for_speech():
                             return transcription.text
                         elif answer == 'N':
                             print("Please make sure you wait for 5 seconds after holding the 'v' key before speaking.")
+                            os.remove(temp_audio.name)
                             return listen_for_speech()
                         else:
                             print("Invalid input. Please enter 'Y' or 'N'.")
