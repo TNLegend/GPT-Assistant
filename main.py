@@ -91,7 +91,6 @@ def textToCommand(speech):
         ],
         temperature=0
     )
-    print(command.choices[0].message.content+"fdsf")
     subprocess.run(command.choices[0].message.content, shell=True, capture_output=True, text=True)
 # Start listening for speech
 
@@ -121,5 +120,4 @@ def logo():
 
 logo()
 text=listen_for_speech()
-print(text)
 textToCommand(text)
