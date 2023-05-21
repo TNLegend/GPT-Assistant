@@ -80,7 +80,7 @@ def listen_for_speech():
                         else:
                             print("Invalid input. Please enter 'Y' or 'N'.")
 
-                except requests.exceptions.RequestException as e:
+                except:
                     print("There is an error. Let's try again.")
 
 def textToCommand(speech):
