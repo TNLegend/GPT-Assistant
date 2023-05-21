@@ -12,6 +12,9 @@
 
 5- Install python requirements "pip install -r requirements.txt"
 
+### Run as root for Unix systems
+
+
 ## Usage:
 
 After installing all required modules run the script hold "v" key wait for 5 secs while holding and then you can start talking. When you stop talking wait for a couple of secs and then release the "v" key this way you will ensure the recogniser captures your whole voice.

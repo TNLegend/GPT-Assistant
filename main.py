@@ -10,7 +10,7 @@ import subprocess
 import time
 import random
 with open("gpt_key.txt",'r') as f:
-    key = f.read()
+    key = f.read().strip()
 openai.api_key = key
 
 # Initialize the recognizer
@@ -80,18 +80,21 @@ def listen_for_speech():
                         else:
                             print("Invalid input. Please enter 'Y' or 'N'.")
 
-                except:
-                    print("There is an error. Let's try again.")
+                except Exception as e:
+                    print(f"Error: {e}\nExiting program...")
+                    exit(1)
 
 def textToCommand(speech):
-    prompt = "You are a personal assistant for my computer so whenever i ask you for a task i want you to respond with cmd prompt in order to do that task . When i give you a task respond only with the prompt without any extra explanation or extra text that explains what to do.\n"
+    prompt = "You are a personal assistant for my computer so whenever i ask you for a task i want you to respond with cmd prompt according to the type of OS specified in order to do that task . When i give you a task respond only with the prompt without any extra explanation or extra text that explains what to do.\n"
+    os_type = f"System: {sys.platform}\n"
     command = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "user", "content": prompt+speech}
+            {"role": "user", "content": prompt+os_type+speech}
         ],
         temperature=0
     )
+    
     subprocess.run(command.choices[0].message.content, shell=True, capture_output=True, text=True)
 # Start listening for speech
 
